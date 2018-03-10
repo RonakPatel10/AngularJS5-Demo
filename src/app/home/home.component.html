@@ -1,0 +1,22 @@
+
+  <div class="container color-dark">
+    <div class="col">
+    <p>Lionel Messi</p>
+    </div>
+    <div class="col">
+      <p>FC Barcelona Goals : {{goalCount}}</p>
+      </div>
+    </div>
+    <div class="container color-light" [@goals]="goals.length">
+      <div class="col">
+    <p class="sm">Lionel Messi : The GOAT : Which Team Against you have scored ?</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="GOAL"[(ngModel)]='goalText' >
+      <br><span>{{goalText}}</span>
+      <input type="submit" [value]="btnText" class="btn" (click)="AddItem()">
+    </form>
+    </div>
+      <div class="col">
+        <p class="life-container"  *ngFor="let goal of goals;let i = index" (click)="RemoveItem(i)">{{goal}}</p>
+        </div>
+      </div>
